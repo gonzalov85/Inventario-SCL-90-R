@@ -77,17 +77,178 @@ var somatizacionesMap = new Map([
     ["64", null], ["66", null], ["89", null]
   ]);
 
+var promSOM;
+var promOBS;
+var promSI;
+var promDEP;
+var promANS;
+var promHOS;
+var promFOB;
+var promPAR;
+var promPSIC;
+var IGS;
+var TSP = 0;
+var IMSP;
 
-function calcularResutlado(){
-    somatizaciones.forEach(calcularSomatizaciones);
-    console.log("somatizaciones :" + somatizacionesMap);
-}
-  
+
 function calcularSomatizaciones(item){
-    //somatizaciones
-    let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
-    let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
-    somatizacionesMap.set(itemName,value);
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  somatizacionesMap.set(itemName,value);
+}
+function calcularObsesionesYCompulsiones(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  obsesionesYCompulsionesMap.set(itemName,value);
+}
+function calcularSensibilidadInterpersonal(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  sensibilidadInterpersonalMap.set(itemName,value);
+}
+function calcularDepresion(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  depresionMap.set(itemName,value);
+}
+function calcularAnsiedad(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  ansiedadMap.set(itemName,value);
+}
+function calcularHostilidad(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  hostilidadMap.set(itemName,value);
+}
+function calcularAnsiedadFobica(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  ansiedadFobicaMap.set(itemName,value);
+}
+function calcularIdeacionParanoide(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  ideacionParanoideMap.set(itemName,value);
+}
+function calcularPsicoticismo(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  psicoticismoMap.set(itemName,value);
+}
+
+function calcularResultado(){
+  const form = document.getElementById("miFormulario");
+  if (form.checkValidity()) {
+    somatizaciones.forEach(calcularSomatizaciones);
+    let sumSOM = 0;
+    somatizacionesMap.forEach((value) => {
+      sumSOM += value;
+    });
+    promSOM = (sumSOM / somaCantPreg).toFixed(2);
+    document.getElementById("SOM").innerHTML = promSOM;
+
+    obsesionesYCompulsiones.forEach(calcularObsesionesYCompulsiones);
+    let sumOBS = 0;
+    obsesionesYCompulsionesMap.forEach((value) => {
+      sumOBS += value;
+    });
+    promOBS = (sumOBS / obseCantPreg).toFixed(2);
+    document.getElementById("OBS").innerHTML = promOBS;
+
+    sensibilidadInterpersonal.forEach(calcularSensibilidadInterpersonal);
+    let sumSI = 0;
+    sensibilidadInterpersonalMap.forEach((value) => {
+      sumSI += value;
+    });
+    promSI = (sumSI / sensiCantPreg).toFixed(2);
+    document.getElementById("SI").innerHTML = promSI;
+
+    depresion.forEach(calcularDepresion);
+    let sumDEP = 0;
+    depresionMap.forEach((value) => {
+      sumDEP += value;
+    });
+    promDEP = (sumDEP / depCantPreg).toFixed(2);
+    document.getElementById("DEP").innerHTML = promDEP;
+    
+    ansiedad.forEach(calcularAnsiedad);
+    let sumANS = 0;
+    ansiedadMap.forEach((value) => {
+      sumANS += value;
+    });
+    promANS = (sumANS / ansiCantPreg).toFixed(2);
+    document.getElementById("ANS").innerHTML = promANS;
+
+    hostilidad.forEach(calcularHostilidad);
+    let sumHOS = 0;
+    hostilidadMap.forEach((value) => {
+      sumHOS += value;
+    });
+    promHOS = (sumHOS / hostCantPreg).toFixed(2);
+    document.getElementById("HOS").innerHTML = promHOS;
+
+    ansiedadFobica.forEach(calcularAnsiedadFobica);
+    let sumFOB = 0;
+    ansiedadFobicaMap.forEach((value) => {
+      sumFOB += value;
+    });
+    promFOB = (sumFOB / ansiFobCantPreg).toFixed(2);
+    document.getElementById("FOB").innerHTML = promFOB;
+
+    ideacionParanoide.forEach(calcularIdeacionParanoide);
+    let sumPAR = 0;
+    ideacionParanoideMap.forEach((value) => {
+      sumPAR += value;
+    });
+    promPAR = (sumPAR / ideaCantPreg).toFixed(2);
+    document.getElementById("PAR").innerHTML = promPAR;
+
+    psicoticismo.forEach(calcularPsicoticismo);
+    let sumPSIC = 0;
+    psicoticismoMap.forEach((value) => {
+      sumPSIC += value;
+    });
+    promPSIC = (sumPSIC / psicoCantPreg).toFixed(2);
+    document.getElementById("PSIC").innerHTML = promPSIC;
+
+    IGS = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC) / 90).toFixed(2);
+    document.getElementById("IGS").innerHTML = IGS;
+    document.getElementById("TSP").innerHTML = TSP;
+    IMSP = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC) / TSP).toFixed(2);
+    document.getElementById("IMSP").innerHTML = IMSP;
+    TSP = 0;
+    document.getElementById("error-message").style.display = "none";
+  } else {
+    document.getElementById("error-message").style.display = "block";
+  }
 }
 
 
