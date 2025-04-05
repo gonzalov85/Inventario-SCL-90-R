@@ -86,6 +86,16 @@ var promHOS;
 var promFOB;
 var promPAR;
 var promPSIC;
+var promADIC;
+var SOM;
+var OBS;
+var SI;
+var DEP;
+var ANS;
+var HOS;
+var FOB;
+var PAR;
+var PSIC;
 var IGS;
 var TSP = 0;
 var IMSP;
@@ -163,8 +173,20 @@ function calcularPsicoticismo(item){
   let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
   psicoticismoMap.set(itemName,value);
 }
+function calcularItemsAdicionales(item){
+  let value = parseInt(document.querySelector(`input[name="${item}"]:checked`).value);
+  if (value != 0){
+    TSP++;
+  }
+  let itemName = document.querySelector(`input[name="${item}"]:checked`).name;
+  itemsAdicionalesMap.set(itemName,value);
+}
 
 function calcularResultado(){
+  // let nombre = document.getElementById("fullName").value;
+  let edad = parseInt(document.getElementById("age").value);
+  let sexo = document.querySelector('input[name="sex"]:checked').value;
+
   const form = document.getElementById("miFormulario");
   if (form.checkValidity()) {
     somatizaciones.forEach(calcularSomatizaciones);
@@ -239,15 +261,96 @@ function calcularResultado(){
     promPSIC = (sumPSIC / psicoCantPreg).toFixed(2);
     document.getElementById("PSIC").innerHTML = promPSIC;
 
-    IGS = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC) / 90).toFixed(2);
+    itemsAdicionales.forEach(calcularItemsAdicionales);
+    let sumADIC = 0;
+    psicoticismoMap.forEach((value) => {
+      sumADIC += value;
+    });
+    promADIC = (sumADIC / itemsCantPreg).toFixed(2);
+    document.getElementById("ADIC").innerHTML = promADIC;
+
+    IGS = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC+sumADIC) / 90).toFixed(2);
     document.getElementById("IGS").innerHTML = IGS;
     document.getElementById("TSP").innerHTML = TSP;
-    IMSP = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC) / TSP).toFixed(2);
+    IMSP = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC+sumADIC) / TSP).toFixed(2);
     document.getElementById("IMSP").innerHTML = IMSP;
     TSP = 0;
     document.getElementById("error-message").style.display = "none";
   } else {
     document.getElementById("error-message").style.display = "block";
+  }
+  //Valores T Normalizados
+  if (sexo == "female" && edad < 18){
+    //SOM
+    if (promSOM >= 0 && promSOM <= 0.04) {
+      SOM = 30;
+    } else if (promSOM >= 0.05 && promSOM <= 0.16) {
+      SOM = 35;
+    } else if (promSOM >= 0.17 && promSOM <= 0.32) {
+      SOM = 40;
+    } else if (promSOM >= 0.33 && promSOM <= 0.57) {
+      SOM = 45;
+    } else if (promSOM >= 0.58 && promSOM <= 0.95) {
+      SOM = 50;
+    } else if (promSOM >= 0.96 && promSOM <= 1.38) {
+      SOM = 55;
+    } else if (promSOM >= 1.39 && promSOM <= 1.72) {
+      SOM = 60;
+    } else if (promSOM >= 1.73 && promSOM <= 1.97) {
+      SOM = 63;
+    } else if (promSOM >= 1.98 && promSOM <= 2.45) {
+      SOM = 65;
+    } else if (promSOM >= 2.46 && promSOM <= 3.08) {
+      SOM = 70;
+    } else if (promSOM >= 3.09 && promSOM <= 3.37) {
+      SOM = 75;
+    } else {
+      SOM = 80;
+    }
+
+    //OBS agregar valores tabla;
+    if (promOBS >= 0 && promOBS <= 0.04) {
+      OBS = 30;
+    } else if (promOBS >= 0.05 && promOBS <= 0.16) {
+      OBS = 35;
+    } else if (promOBS >= 0.17 && promOBS <= 0.32) {
+      OBS = 40;
+    } else if (promOBS >= 0.33 && promOBS <= 0.57) {
+      OBS = 45;
+    } else if (promOBS >= 0.58 && promOBS <= 0.95) {
+      OBS = 50;
+    } else if (promOBS >= 0.96 && promOBS <= 1.38) {
+      OBS = 55;
+    } else if (promOBS >= 1.39 && promOBS <= 1.72) {
+      OBS = 60;
+    } else if (promOBS >= 1.73 && promOBS <= 1.97) {
+      OBS = 63;
+    } else if (promOBS >= 1.98 && promOBS <= 2.45) {
+      OBS = 65;
+    } else if (promOBS >= 2.46 && promOBS <= 3.08) {
+      OBS = 70;
+    } else if (promOBS >= 3.09 && promOBS <= 3.37) {
+      OBS = 75;
+    } else {
+      OBS = 80;
+    }
+
+    //SI;
+    //DEP;
+    //ANS;
+    //HOS;
+    //FOB;
+    //PAR;
+    //PSIC;
+
+
+
+  } else if (sexo == "male" && edad < 18) {
+
+  } else if (sexo == "female" && edad >= 18) {
+  
+  } else if (sexo == "male" && edad >= 18) {
+
   }
 }
 
