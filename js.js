@@ -282,65 +282,215 @@ function calcularResultado(){
   //Valores T Normalizados
   if (sexo == "female" && edad < 18){
     //SOM
-    if (promSOM >= 0 && promSOM <= 0.04) {
+    if (promSOM <= 0.04) {
       SOM = 30;
-    } else if (promSOM >= 0.05 && promSOM <= 0.16) {
+    } else if (promSOM <= 0.16) {
       SOM = 35;
-    } else if (promSOM >= 0.17 && promSOM <= 0.32) {
+    } else if (promSOM <= 0.32) {
       SOM = 40;
-    } else if (promSOM >= 0.33 && promSOM <= 0.57) {
+    } else if (promSOM <= 0.57) {
       SOM = 45;
-    } else if (promSOM >= 0.58 && promSOM <= 0.95) {
+    } else if (promSOM <= 0.95) {
       SOM = 50;
-    } else if (promSOM >= 0.96 && promSOM <= 1.38) {
+    } else if (promSOM <= 1.38) {
       SOM = 55;
-    } else if (promSOM >= 1.39 && promSOM <= 1.72) {
+    } else if (promSOM <= 1.72) {
       SOM = 60;
-    } else if (promSOM >= 1.73 && promSOM <= 1.97) {
+    } else if (promSOM <= 1.97) {
       SOM = 63;
-    } else if (promSOM >= 1.98 && promSOM <= 2.45) {
+    } else if (promSOM <= 2.45) {
       SOM = 65;
-    } else if (promSOM >= 2.46 && promSOM <= 3.08) {
+    } else if (promSOM <= 3.08) {
       SOM = 70;
-    } else if (promSOM >= 3.09 && promSOM <= 3.37) {
+    } else if (promSOM <= 3.37) {
       SOM = 75;
     } else {
       SOM = 80;
     }
 
-    //OBS agregar valores tabla;
-    if (promOBS >= 0 && promOBS <= 0.04) {
+    //OBS
+    if (promOBS <= 0.15) {
       OBS = 30;
-    } else if (promOBS >= 0.05 && promOBS <= 0.16) {
+    } else if (promOBS <= 0.35) {
       OBS = 35;
-    } else if (promOBS >= 0.17 && promOBS <= 0.32) {
+    } else if (promOBS <= 0.65) {
       OBS = 40;
-    } else if (promOBS >= 0.33 && promOBS <= 0.57) {
+    } else if (promOBS <= 1) {
       OBS = 45;
-    } else if (promOBS >= 0.58 && promOBS <= 0.95) {
+    } else if (promOBS <= 1.43) {
       OBS = 50;
-    } else if (promOBS >= 0.96 && promOBS <= 1.38) {
+    } else if (promOBS <= 1.88) {
       OBS = 55;
-    } else if (promOBS >= 1.39 && promOBS <= 1.72) {
+    } else if (promOBS <= 2.25) {
       OBS = 60;
-    } else if (promOBS >= 1.73 && promOBS <= 1.97) {
+    } else if (promOBS <= 2.50) {
       OBS = 63;
-    } else if (promOBS >= 1.98 && promOBS <= 2.45) {
+    } else if (promOBS <= 2.90) {
       OBS = 65;
-    } else if (promOBS >= 2.46 && promOBS <= 3.08) {
+    } else if (promOBS <= 3.25) {
       OBS = 70;
-    } else if (promOBS >= 3.09 && promOBS <= 3.37) {
+    } else if (promOBS <= 3.30) {
       OBS = 75;
     } else {
       OBS = 80;
     }
 
-    //SI;
-    //DEP;
-    //ANS;
-    //HOS;
-    //FOB;
-    //PAR;
+    //SI
+    if (promSI <= 0.16) {
+      SI = 30;
+    } else if (promSI <= 0.32) {
+      SI = 35;
+    } else if (promSI <= 0.61) {
+      SI = 40;
+    } else if (promSI <= 0.94) {
+      SI = 45;
+    } else if (promSI <= 1.33) {
+      SI = 50;
+    } else if (promSI <= 1.78) {
+      SI = 55;
+    } else if (promSI <= 2.16) {
+      SI = 60;
+    } else if (promSI <= 2.38) {
+      SI = 63;
+    } else if (promSI <= 2.77) {
+      SI = 65;
+    } else if (promSI <= 3.34) {
+      SI = 70;
+    } else if (promSI <= 3.67) {
+      SI = 75;
+    } else {
+      SI = 80;
+    }
+
+    //DEP
+    if (promDEP <= 0.11) {
+      DEP = 30;
+    } else if (promDEP <= 0.26) {
+      DEP = 35;
+    } else if (promDEP <= 0.48) {
+      DEP = 40;
+    } else if (promDEP <= 0.85) {
+      DEP = 45;
+    } else if (promDEP <= 1.27) {
+      DEP = 50;
+    } else if (promDEP <= 1.73) {
+      DEP = 55;
+    } else if (promDEP <= 2.11) {
+      DEP = 60;
+    } else if (promDEP <= 2.38) {
+      DEP = 63;
+    } else if (promDEP <= 2.84) {
+      DEP = 65;
+    } else if (promDEP <= 3.44) {
+      DEP = 70;
+    } else if (promDEP <= 4.45) {
+      DEP = 75;
+    } else {
+      DEP = 80;
+    }
+
+    //ANS
+    if (promANS <= 0.05) {
+      ANS = 30;
+    } else if (promANS <= 0.20) {
+      ANS = 35;
+    } else if (promANS <= 0.40) {
+      ANS = 40;
+    } else if (promANS <= 0.70) {
+      ANS = 45;
+    } else if (promANS <= 1.15) {
+      ANS = 50;
+    } else if (promANS <= 1.65) {
+      ANS = 55;
+    } else if (promANS <= 2.05) {
+      ANS = 60;
+    } else if (promANS <= 2.30) {
+      ANS = 63;
+    } else if (promANS <= 2.77) {
+      ANS = 65;
+    } else if (promANS <= 3.58) {
+      ANS = 70;
+    } else if (promANS <= 4.20) {
+      ANS = 75;
+    } else {
+      ANS = 80;
+    }
+
+    //HOS
+    if (promHOS <= 0.08) {
+      HOS = 30;
+    } else if (promHOS <= 0.23) {
+      HOS = 35;
+    } else if (promHOS <= 0.39) {
+      HOS = 40;
+    } else if (promHOS <= 0.66) {
+      HOS = 45;
+    } else if (promHOS <= 1.08) {
+      HOS = 50;
+    } else if (promHOS <= 1.66) {
+      HOS = 55;
+    } else if (promHOS <= 2.25) {
+      HOS = 60;
+    } else if (promHOS <= 2.65) {
+      HOS = 63;
+    } else if (promHOS <= 3.18) {
+      HOS = 65;
+    } else if (promHOS <= 3.77) {
+      HOS = 70;
+    } else if (promHOS <= 4) {
+      HOS = 75;
+    } else {
+      HOS = 80;
+    }
+
+    //FOB
+    if (promFOB <= 0.07) {
+      FOB = 30;
+    } else if (promFOB <= 0.21) {
+      FOB = 45;
+    } else if (promFOB <= 0.43) {
+      FOB = 50;
+    } else if (promFOB <= 0.78) {
+      FOB = 55;
+    } else if (promFOB <= 1.14) {
+      FOB = 60;
+    } else if (promFOB <= 1.43) {
+      FOB = 63;
+    } else if (promFOB <= 2.07) {
+      FOB = 65;
+    } else if (promFOB <= 3.16) {
+      FOB = 70;
+    } else if (promFOB <= 3.43) {
+      FOB = 75;
+    } else {
+      FOB = 80;
+    }
+
+    //PAR
+    if (promPAR <= 0.08) {
+      PAR = 30;
+    } else if (promPAR <= 0.25) {
+      PAR = 40;
+    } else if (promPAR <= 0.5) {
+      PAR = 45;
+    } else if (promPAR <= 0.92) {
+      PAR = 50;
+    } else if (promPAR <= 1.42) {
+      PAR = 55;
+    } else if (promPAR <= 1.83) {
+      PAR = 60;
+    } else if (promPAR <= 2.08) {
+      PAR = 63;
+    } else if (promPAR <= 2.58) {
+      PAR = 65;
+    } else if (promPAR <= 3.39) {
+      PAR = 70;
+    } else if (promPAR <= 3.89) {
+      PAR = 75;
+    } else {
+      PAR = 80;
+    }
+
     //PSIC;
 
 
