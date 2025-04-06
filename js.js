@@ -90,6 +90,7 @@ var IMSP;
 var nombre;
 var edad;
 var sexo;
+var todayStr = new Date().toISOString().split('T')[0];
 
 //métodos para ir guardando en los mapas las respuestas de cada tema
 function calcularSomatizaciones(item){
@@ -268,6 +269,7 @@ function calcularResultado(){
     console.log('promIMSP :' + promIMSP);
     
     document.getElementById("error-message").style.display = "none";
+    document.getElementById("boton-descargar").style.display = "block";
   } else {
     document.getElementById("error-message").style.display = "block";
   }
@@ -1560,11 +1562,47 @@ function calcularResultado(){
   document.getElementById("IMSP").innerHTML = IMSP != null ? IMSP : '';
   document.getElementById("nombre-paciente").innerHTML = nombre != null ? nombre : '';
   document.getElementById("edad-paciente").innerHTML = edad != null && edad != NaN  ? edad : '';
-  let todayStr = new Date().toISOString().split('T')[0];
   document.getElementById("fecha").innerHTML = todayStr;
 
   //se reinicia el valor de cant respondidas
   TSP = 0;
+}
+//método para bajar PDF
+async function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const element = document.getElementById('mis-resultados');
+
+  const canvas = await html2canvas(element, {
+    scale: 2, // High quality
+    useCORS: true
+  });
+
+  const imgData = canvas.toDataURL('image/jpeg', 0.8);
+  const pdf = new jsPDF("p", "mm", "a4");
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+
+  // Get canvas dimensions in mm
+  const imgWidth = pageWidth;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  let position = 0;
+
+  if (imgHeight < pageHeight) {
+    // Fits on one page
+    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+  } else {
+    // Split into multiple pages
+    while (position < imgHeight) {
+      pdf.addImage(imgData, 'JPEG', 0, -position, imgWidth, imgHeight);
+      position += pageHeight;
+      if (position < imgHeight) pdf.addPage();
+    }
+  }
+  fecha = document.getElementById("fecha").innerHTML = todayStr;
+  nombre = document.getElementById("fullName").value;
+  pdf.save(`puntajes_scl90r_${nombre}_${fecha}.pdf`);
 }
 
 
