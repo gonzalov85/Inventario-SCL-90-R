@@ -1573,7 +1573,7 @@ async function downloadPDF() {
   const element = document.getElementById('mis-resultados');
 
   const canvas = await html2canvas(element, {
-    scale: 2, // High quality
+    scale: 1, // High quality
     useCORS: true
   });
 
