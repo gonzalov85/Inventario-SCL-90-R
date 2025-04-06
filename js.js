@@ -87,6 +87,9 @@ var TSP = 0;
 var NTSP;
 var promIMSP;
 var IMSP;
+var nombre;
+var edad;
+var sexo;
 
 //métodos para ir guardando en los mapas las respuestas de cada tema
 function calcularSomatizaciones(item){
@@ -172,18 +175,19 @@ function calcularItemsAdicionales(item){
 
 //método que calcula el resultado total con valores T normalizados
 function calcularResultado(){
-  //let nombre = document.getElementById("fullName").value;
-  let edad = parseInt(document.getElementById("age").value);
-  let sexo = document.querySelector('input[name="sex"]:checked').value;
-
   const form = document.getElementById("miFormulario");
   if (form.checkValidity()) {
+    nombre = document.getElementById("fullName").value;
+    edad = parseInt(document.getElementById("age").value);
+    sexo = document.querySelector('input[name="sex"]:checked').value;
+
     somatizaciones.forEach(calcularSomatizaciones);
     let sumSOM = 0;
     somatizacionesMap.forEach((value) => {
       sumSOM += value;
     });
     promSOM = (sumSOM / somaCantPreg).toFixed(2);
+    console.log('promSOM :' + promSOM);
 
     obsesionesYCompulsiones.forEach(calcularObsesionesYCompulsiones);
     let sumOBS = 0;
@@ -191,6 +195,7 @@ function calcularResultado(){
       sumOBS += value;
     });
     promOBS = (sumOBS / obseCantPreg).toFixed(2);
+    console.log('promOBS :' + promOBS);
 
     sensibilidadInterpersonal.forEach(calcularSensibilidadInterpersonal);
     let sumSI = 0;
@@ -198,6 +203,7 @@ function calcularResultado(){
       sumSI += value;
     });
     promSI = (sumSI / sensiCantPreg).toFixed(2);
+    console.log('promSI :' + promSI);
 
     depresion.forEach(calcularDepresion);
     let sumDEP = 0;
@@ -205,6 +211,7 @@ function calcularResultado(){
       sumDEP += value;
     });
     promDEP = (sumDEP / depCantPreg).toFixed(2);
+    console.log('promDEP :' + promDEP);
 
     ansiedad.forEach(calcularAnsiedad);
     let sumANS = 0;
@@ -212,6 +219,7 @@ function calcularResultado(){
       sumANS += value;
     });
     promANS = (sumANS / ansiCantPreg).toFixed(2);
+    console.log('promANS :' + promANS);
 
     hostilidad.forEach(calcularHostilidad);
     let sumHOS = 0;
@@ -219,6 +227,7 @@ function calcularResultado(){
       sumHOS += value;
     });
     promHOS = (sumHOS / hostCantPreg).toFixed(2);
+    console.log('promHOS :' + promHOS);
 
     ansiedadFobica.forEach(calcularAnsiedadFobica);
     let sumFOB = 0;
@@ -226,6 +235,7 @@ function calcularResultado(){
       sumFOB += value;
     });
     promFOB = (sumFOB / ansiFobCantPreg).toFixed(2);
+    console.log('promFOB :' + promFOB);
 
     ideacionParanoide.forEach(calcularIdeacionParanoide);
     let sumPAR = 0;
@@ -233,6 +243,7 @@ function calcularResultado(){
       sumPAR += value;
     });
     promPAR = (sumPAR / ideaCantPreg).toFixed(2);
+    console.log('promPAR :' + promPAR);
 
     psicoticismo.forEach(calcularPsicoticismo);
     let sumPSIC = 0;
@@ -240,6 +251,7 @@ function calcularResultado(){
       sumPSIC += value;
     });
     promPSIC = (sumPSIC / psicoCantPreg).toFixed(2);
+    console.log('promPSIC :' + promPSIC);
 
     itemsAdicionales.forEach(calcularItemsAdicionales);
     let sumADIC = 0;
@@ -247,10 +259,13 @@ function calcularResultado(){
       sumADIC += value;
     });
     promADIC = (sumADIC / itemsCantPreg).toFixed(2);
+    console.log('promADIC :' + promADIC);
 
     promIGS = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC+sumADIC) / 90).toFixed(2);
+    console.log('promIGS :' + promIGS);
     
     promIMSP = ((sumSOM+sumOBS+sumSI+sumDEP+sumANS+sumHOS+sumFOB+sumPAR+sumPSIC+sumADIC) / TSP).toFixed(2);
+    console.log('promIMSP :' + promIMSP);
     
     document.getElementById("error-message").style.display = "none";
   } else {
@@ -1543,6 +1558,10 @@ function calcularResultado(){
   document.getElementById("IGS").innerHTML = IGS != null ? IGS : '';
   document.getElementById("TSP").innerHTML = NTSP != null ? NTSP : '';
   document.getElementById("IMSP").innerHTML = IMSP != null ? IMSP : '';
+  document.getElementById("nombre-paciente").innerHTML = nombre != null ? nombre : '';
+  document.getElementById("edad-paciente").innerHTML = edad != null && edad != NaN  ? edad : '';
+  let todayStr = new Date().toISOString().split('T')[0];
+  document.getElementById("fecha").innerHTML = todayStr;
 
   //se reinicia el valor de cant respondidas
   TSP = 0;
