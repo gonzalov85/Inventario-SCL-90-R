@@ -186,7 +186,7 @@ function calcularItemsAdicionales(item){
 }
 
 function calcularResultado(){
-  // let nombre = document.getElementById("fullName").value;
+  let nombre = document.getElementById("fullName").value;
   let edad = parseInt(document.getElementById("age").value);
   let sexo = document.querySelector('input[name="sex"]:checked').value;
 
@@ -1555,8 +1555,8 @@ function calcularResultado(){
   document.getElementById("PAR").innerHTML = PAR;
   document.getElementById("PSIC").innerHTML = PSIC;
   document.getElementById("IGS").innerHTML = IGS;
-  document.getElementById("TSP").innerHTML = TSP;
-  document.getElementById("IMSP").innerHTML = NTSP;
+  document.getElementById("TSP").innerHTML = NTSP;
+  document.getElementById("IMSP").innerHTML = IMSP;
 
   //se reinicia el valor de cant respondidas
   TSP = 0;
