@@ -55,3 +55,13 @@ body {
     background-color: #b56a2e;
     border-color: #b56a2e;
 }
+
+.form-wrapper {
+    width: 25%;
+    min-width: 280px;
+  }
+
+.age-field {
+    width: 15%;
+    min-width: 70px;
+}
