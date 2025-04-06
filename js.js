@@ -901,10 +901,647 @@ function calcularResultado(){
       IMSP = 80;
     }
 
+    //Femenino adulto
   } else if (sexo == "female" && edad >= 18) {
-  
-  } else if (sexo == "male" && edad >= 18) {
+    //SOM Femenino adulto
+    if (promSOM <= 0.09) {
+      SOM = 30;
+    } else if (promSOM <= 0.21) {
+      SOM = 35;
+    } else if (promSOM <= 0.34) {
+      SOM = 40;
+    } else if (promSOM <= 0.59) {
+      SOM = 45;
+    } else if (promSOM <= 0.88) {
+      SOM = 50;
+    } else if (promSOM <= 1.25) {
+      SOM = 55;
+    } else if (promSOM <= 1.66) {
+      SOM = 60;
+    } else if (promSOM <= 1.92) {
+      SOM = 63;
+    } else if (promSOM <= 2.18) {
+      SOM = 65;
+    } else if (promSOM <= 2.62) {
+      SOM = 70;
+    } else if (promSOM <= 2.94) {
+      SOM = 75;
+    } else {
+      SOM = 80;
+    }
 
+    //OBS Femenino adulto
+    if (promOBS <= 0.10) {
+      OBS = 30;
+    } else if (promOBS <= 0.30) {
+      OBS = 35;
+    } else if (promOBS <= 0.55) {
+      OBS = 40;
+    } else if (promOBS <= 0.85) {
+      OBS = 45;
+    } else if (promOBS <= 1.20) {
+      OBS = 50;
+    } else if (promOBS <= 1.60) {
+      OBS = 55;
+    } else if (promOBS <= 1.95) {
+      OBS = 60;
+    } else if (promOBS <= 2.15) {
+      OBS = 63;
+    } else if (promOBS <= 2.55) {
+      OBS = 65;
+    } else if (promOBS <= 3.16) {
+      OBS = 70;
+    } else if (promOBS <= 3.46) {
+      OBS = 75;
+    } else {
+      OBS = 80;
+    }
+
+    //SI Femenino adulto
+    if (promSI <= 0.06) {
+      SI = 30;
+    } else if (promSI <= 0.17) {
+      SI = 35;
+    } else if (promSI <= 0.33) {
+      SI = 40;
+    } else if (promSI <= 0.56) {
+      SI = 45;
+    } else if (promSI <= 0.89) {
+      SI = 50;
+    } else if (promSI <= 1.28) {
+      SI = 55;
+    } else if (promSI <= 1.56) {
+      SI = 60;
+    } else if (promSI <= 1.78) {
+      SI = 63;
+    } else if (promSI <= 2.25) {
+      SI = 65;
+    } else if (promSI <= 2.80) {
+      SI = 70;
+    } else if (promSI <= 3.00) {
+      SI = 75;
+    } else {
+      SI = 80;
+    }
+
+    //DEP Femenino adulto
+    if (promDEP <= 0.14) {
+      DEP = 30;
+    } else if (promDEP <= 0.31) {
+      DEP = 35;
+    } else if (promDEP <= 0.50) {
+      DEP = 40;
+    } else if (promDEP <= 0.74) {
+      DEP = 45;
+    } else if (promDEP <= 1.04) {
+      DEP = 50;
+    } else if (promDEP <= 1.50) {
+      DEP = 55;
+    } else if (promDEP <= 1.89) {
+      DEP = 60;
+    } else if (promDEP <= 2.12) {
+      DEP = 63;
+    } else if (promDEP <= 2.52) {
+      DEP = 65;
+    } else if (promDEP <= 3.06) {
+      DEP = 70;
+    } else if (promDEP <= 3.50) {
+      DEP = 75;
+    } else {
+      DEP = 80;
+    }
+
+    //ANS Femenino adulto
+    if (promANS <= 0.10) {
+      ANS = 30;
+    } else if (promANS <= 0.25) {
+      ANS = 35;
+    } else if (promANS <= 0.45) {
+      ANS = 40;
+    } else if (promANS <= 0.70) {
+      ANS = 45;
+    } else if (promANS <= 1.00) {
+      ANS = 50;
+    } else if (promANS <= 1.40) {
+      ANS = 55;
+    } else if (promANS <= 1.70) {
+      ANS = 60;
+    } else if (promANS <= 1.97) {
+      ANS = 63;
+    } else if (promANS <= 2.32) {
+      ANS = 65;
+    } else if (promANS <= 2.77) {
+      ANS = 70;
+    } else if (promANS <= 3.07) {
+      ANS = 75;
+    } else {
+      ANS = 80;
+    }
+
+    //HOS Femenino adulto
+    if (promHOS <= 0.00) {
+      HOS = 30;
+    } else if (promHOS <= 0.09) {
+      HOS = 35;
+    } else if (promHOS <= 0.25) {
+      HOS = 40;
+    } else if (promHOS <= 0.50) {
+      HOS = 45;
+    } else if (promHOS <= 0.84) {
+      HOS = 50;
+    } else if (promHOS <= 1.25) {
+      HOS = 55;
+    } else if (promHOS <= 1.59) {
+      HOS = 60;
+    } else if (promHOS <= 1.75) {
+      HOS = 63;
+    } else if (promHOS <= 2.20) {
+      HOS = 65;
+    } else if (promHOS <= 2.87) {
+      HOS = 70;
+    } else if (promHOS <= 3.25) {
+      HOS = 75;
+    } else {
+      HOS = 80;
+    }
+
+    //FOB Femenino adulto
+    if (promFOB <= 0.00) {
+      FOB = 30;
+    } else if (promFOB <= 0.15) {
+      FOB = 45;
+    } else if (promFOB <= 0.43) {
+      FOB = 50;
+    } else if (promFOB <= 0.72) {
+      FOB = 55;
+    } else if (promFOB <= 1.00) {
+      FOB = 60;
+    } else if (promFOB <= 1.22) {
+      FOB = 63;
+    } else if (promFOB <= 1.65) {
+      FOB = 65;
+    } else if (promFOB <= 2.32) {
+      FOB = 70;
+    } else if (promFOB <= 2.89) {
+      FOB = 75;
+    } else {
+      FOB = 80;
+    }
+
+    //PAR Femenino adulto
+    if (promPAR <= 0.00) {
+      PAR = 30;
+    } else if (promPAR <= 0.09) {
+      PAR = 35;
+    } else if (promPAR <= 0.25) {
+      PAR = 40;
+    } else if (promPAR <= 0.50) {
+      PAR = 45;
+    } else if (promPAR <= 0.92) {
+      PAR = 50;
+    } else if (promPAR <= 1.42) {
+      PAR = 55;
+    } else if (promPAR <= 1.84) {
+      PAR = 60;
+    } else if (promPAR <= 2.09) {
+      PAR = 63;
+    } else if (promPAR <= 2.59) {
+      PAR = 65;
+    } else if (promPAR <= 3.39) {
+      PAR = 70;
+    } else if (promPAR <= 3.89) {
+      PAR = 75;
+    } else {
+      PAR = 80;
+    }
+
+    //PSIC Femenino adulto
+    if (promPSIC <= 0.00) {
+      PSIC = 30;
+    } else if (promPSIC <= 0.05) {
+      PSIC = 35;
+    } else if (promPSIC <= 0.15) {
+      PSIC = 40;
+    } else if (promPSIC <= 0.30) {
+      PSIC = 45;
+    } else if (promPSIC <= 0.55) {
+      PSIC = 50;
+    } else if (promPSIC <= 0.85) {
+      PSIC = 55;
+    } else if (promPSIC <= 1.05) {
+      PSIC = 60;
+    } else if (promPSIC <= 1.20) {
+      PSIC = 63;
+    } else if (promPSIC <= 1.64) {
+      PSIC = 65;
+    } else if (promPSIC <= 2.27) {
+      PSIC = 70;
+    } else if (promPSIC <= 2.64) {
+      PSIC = 75;
+    } else {
+      PSIC = 80;
+    }
+
+    //IGS Femenino adulto
+    if (promIGS <= 0.22) {
+      IGS = 30;
+    } else if (promIGS <= 0.33) {
+      IGS = 35;
+    } else if (promIGS <= 0.45) {
+      IGS = 40;
+    } else if (promIGS <= 0.63) {
+      IGS = 45;
+    } else if (promIGS <= 0.89) {
+      IGS = 50;
+    } else if (promIGS <= 1.20) {
+      IGS = 55;
+    } else if (promIGS <= 1.49) {
+      IGS = 60;
+    } else if (promIGS <= 1.68) {
+      IGS = 63;
+    } else if (promIGS <= 1.96) {
+      IGS = 65;
+    } else if (promIGS <= 2.32) {
+      IGS = 70;
+    } else if (promIGS <= 2.50) {
+      IGS = 75;
+    } else {
+      IGS = 80;
+    }
+
+    //TSP Femenino adulto
+    if (TSP <= 12.00) {
+      NTSP = 30;
+    } else if (TSP <= 18.06) {
+      NTSP = 35;
+    } else if (TSP <= 25.06) {
+      NTSP = 40;
+    } else if (TSP <= 33.00) {
+      NTSP = 45;
+    } else if (TSP <= 42.00) {
+      NTSP = 50;
+    } else if (TSP <= 52.00) {
+      NTSP = 55;
+    } else if (TSP <= 59.50) {
+      NTSP = 60;
+    } else if (TSP <= 64.00) {
+      NTSP = 63;
+    } else if (TSP <= 70.00) {
+      NTSP = 65;
+    } else if (TSP <= 75.86) {
+      NTSP = 70;
+    } else if (TSP <= 79.86) {
+      NTSP = 75;
+    } else {
+      NTSP = 80;
+    }
+
+    //IMSP Femenino adulto
+    if (promIMSP <= 1.19) {
+      IMSP = 30;
+    } else if (promIMSP <= 1.34) {
+      IMSP = 35;
+    } else if (promIMSP <= 1.51) {
+      IMSP = 40;
+    } else if (promIMSP <= 1.72) {
+      IMSP = 45;
+    } else if (promIMSP <= 1.99) {
+      IMSP = 50;
+    } else if (promIMSP <= 2.27) {
+      IMSP = 55;
+    } else if (promIMSP <= 2.47) {
+      IMSP = 60;
+    } else if (promIMSP <= 2.60) {
+      IMSP = 63;
+    } else if (promIMSP <= 2.83) {
+      IMSP = 65;
+    } else if (promIMSP <= 3.07) {
+      IMSP = 70;
+    } else if (promIMSP <= 3.21) {
+      IMSP = 75;
+    } else {
+      IMSP = 80;
+    }
+    
+    //Masculino adulto
+  } else if (sexo == "male" && edad >= 18) {
+    //SOM Masculino adulto
+    if (promSOM <= 0.00) {
+      SOM = 30;
+    } else if (promSOM <= 0.04) {
+      SOM = 35;
+    } else if (promSOM <= 0.17) {
+      SOM = 40;
+    } else if (promSOM <= 0.34) {
+      SOM = 45;
+    } else if (promSOM <= 0.59) {
+      SOM = 50;
+    } else if (promSOM <= 0.92) {
+      SOM = 55;
+    } else if (promSOM <= 1.17) {
+      SOM = 60;
+    } else if (promSOM <= 1.34) {
+      SOM = 63;
+    } else if (promSOM <= 1.59) {
+      SOM = 65;
+    } else if (promSOM <= 2.03) {
+      SOM = 70;
+    } else if (promSOM <= 2.41) {
+      SOM = 75;
+    } else {
+      SOM = 80;
+    }
+
+    //OBS Masculino adulto
+    if (promOBS <= 0.10) {
+      OBS = 30;
+    } else if (promOBS <= 0.25) {
+      OBS = 35;
+    } else if (promOBS <= 0.40) {
+      OBS = 40;
+    } else if (promOBS <= 0.65) {
+      OBS = 45;
+    } else if (promOBS <= 1.05) {
+      OBS = 50;
+    } else if (promOBS <= 1.50) {
+      OBS = 55;
+    } else if (promOBS <= 1.80) {
+      OBS = 60;
+    } else if (promOBS <= 2.05) {
+      OBS = 63;
+    } else if (promOBS <= 2.40) {
+      OBS = 65;
+    } else if (promOBS <= 3.00) {
+      OBS = 70;
+    } else if (promOBS <= 3.50) {
+      OBS = 75;
+    } else {
+      OBS = 80;
+    }
+
+    //SI Masculino adulto
+    if (promSI <= 0.00) {
+      SI = 30;
+    } else if (promSI <= 0.06) {
+      SI = 35;
+    } else if (promSI <= 0.22) {
+      SI = 40;
+    } else if (promSI <= 0.45) {
+      SI = 45;
+    } else if (promSI <= 0.73) {
+      SI = 50;
+    } else if (promSI <= 1.11) {
+      SI = 55;
+    } else if (promSI <= 1.45) {
+      SI = 60;
+    } else if (promSI <= 1.62) {
+      SI = 63;
+    } else if (promSI <= 2.03) {
+      SI = 65;
+    } else if (promSI <= 2.69) {
+      SI = 70;
+    } else if (promSI <= 3.11) {
+      SI = 75;
+    } else {
+      SI = 80;
+    }
+
+    //DEP Masculino adulto
+    if (promDEP <= 0.04) {
+      DEP = 30;
+    } else if (promDEP <= 0.16) {
+      DEP = 35;
+    } else if (promDEP <= 0.31) {
+      DEP = 40;
+    } else if (promDEP <= 0.54) {
+      DEP = 45;
+    } else if (promDEP <= 0.86) {
+      DEP = 50;
+    } else if (promDEP <= 1.20) {
+      DEP = 55;
+    } else if (promDEP <= 1.50) {
+      DEP = 60;
+    } else if (promDEP <= 1.70) {
+      DEP = 63;
+    } else if (promDEP <= 2.10) {
+      DEP = 65;
+    } else if (promDEP <= 2.65) {
+      DEP = 70;
+    } else if (promDEP <= 3.02) {
+      DEP = 75;
+    } else {
+      DEP = 80;
+    }
+
+    //ANS Masculino adulto
+    if (promANS <= 0.05) {
+      ANS = 30;
+    } else if (promANS <= 0.15) {
+      ANS = 35;
+    } else if (promANS <= 0.30) {
+      ANS = 40;
+    } else if (promANS <= 0.50) {
+      ANS = 45;
+    } else if (promANS <= 0.75) {
+      ANS = 50;
+    } else if (promANS <= 1.10) {
+      ANS = 55;
+    } else if (promANS <= 1.45) {
+      ANS = 60;
+    } else if (promANS <= 1.65) {
+      ANS = 63;
+    } else if (promANS <= 1.99) {
+      ANS = 65;
+    } else if (promANS <= 2.48) {
+      ANS = 70;
+    } else if (promANS <= 2.69) {
+      ANS = 75;
+    } else {
+      ANS = 80;
+    }
+
+    //HOS Masculino adulto
+    if (promHOS <= 0.00) {
+      HOS = 30;
+    } else if (promHOS <= 0.09) {
+      HOS = 35;
+    } else if (promHOS <= 0.25) {
+      HOS = 40;
+    } else if (promHOS <= 0.50) {
+      HOS = 45;
+    } else if (promHOS <= 0.84) {
+      HOS = 50;
+    } else if (promHOS <= 1.17) {
+      HOS = 55;
+    } else if (promHOS <= 1.50) {
+      HOS = 60;
+    } else if (promHOS <= 1.75) {
+      HOS = 63;
+    } else if (promHOS <= 2.20) {
+      HOS = 65;
+    } else if (promHOS <= 2.87) {
+      HOS = 70;
+    } else if (promHOS <= 3.50) {
+      HOS = 75;
+    } else {
+      HOS = 80;
+    }
+
+    //FOB Masculino adulto
+    if (promFOB <= 0.00) {
+      FOB = 30;
+    } else if (promFOB <= 0.07) {
+      FOB = 45;
+    } else if (promFOB <= 0.22) {
+      FOB = 50;
+    } else if (promFOB <= 0.43) {
+      FOB = 55;
+    } else if (promFOB <= 0.72) {
+      FOB = 60;
+    } else if (promFOB <= 0.93) {
+      FOB = 63;
+    } else if (promFOB <= 1.22) {
+      FOB = 65;
+    } else if (promFOB <= 1.66) {
+      FOB = 70;
+    } else if (promFOB <= 2.30) {
+      FOB = 75;
+    } else {
+      FOB = 80;
+    }
+
+    //PAR Masculino adulto
+    if (promPAR <= 0.00) {
+      PAR = 30;
+    } else if (promPAR <= 0.09) {
+      PAR = 35;
+    } else if (promPAR <= 0.25) {
+      PAR = 40;
+    } else if (promPAR <= 0.50) {
+      PAR = 45;
+    } else if (promPAR <= 0.92) {
+      PAR = 50;
+    } else if (promPAR <= 1.34) {
+      PAR = 55;
+    } else if (promPAR <= 1.67) {
+      PAR = 60;
+    } else if (promPAR <= 1.95) {
+      PAR = 63;
+    } else if (promPAR <= 2.37) {
+      PAR = 65;
+    } else if (promPAR <= 2.81) {
+      PAR = 70;
+    } else if (promPAR <= 3.06) {
+      PAR = 75;
+    } else {
+      PAR = 80;
+    }
+
+    //PSIC Masculino adulto
+    if (promPSIC <= 0.00) {
+      PSIC = 30;
+    } else if (promPSIC <= 0.10) {
+      PSIC = 40;
+    } else if (promPSIC <= 0.25) {
+      PSIC = 45;
+    } else if (promPSIC <= 0.40) {
+      PSIC = 50;
+    } else if (promPSIC <= 0.70) {
+      PSIC = 55;
+    } else if (promPSIC <= 1.05) {
+      PSIC = 60;
+    } else if (promPSIC <= 1.30) {
+      PSIC = 63;
+    } else if (promPSIC <= 1.57) {
+      PSIC = 65;
+    } else if (promPSIC <= 1.96) {
+      PSIC = 70;
+    } else if (promPSIC <= 2.24) {
+      PSIC = 75;
+    } else {
+      PSIC = 80;
+    }
+
+    //IGS Masculino adulto
+    if (promIGS <= 0.14) {
+      IGS = 30;
+    } else if (promIGS <= 0.23) {
+      IGS = 35;
+    } else if (promIGS <= 0.35) {
+      IGS = 40;
+    } else if (promIGS <= 0.51) {
+      IGS = 45;
+    } else if (promIGS <= 0.75) {
+      IGS = 50;
+    } else if (promIGS <= 0.99) {
+      IGS = 55;
+    } else if (promIGS <= 1.21) {
+      IGS = 60;
+    } else if (promIGS <= 1.41) {
+      IGS = 63;
+    } else if (promIGS <= 1.67) {
+      IGS = 65;
+    } else if (promIGS <= 2.01) {
+      IGS = 70;
+    } else if (promIGS <= 2.20) {
+      IGS = 75;
+    } else {
+      IGS = 80;
+    }
+
+    //TSP Masculino adulto
+    if (TSP <= 7.80) {
+      NTSP = 30;
+    } else if (TSP <= 13.00) {
+      NTSP = 35;
+    } else if (TSP <= 19.90) {
+      NTSP = 40;
+    } else if (TSP <= 27.90) {
+      NTSP = 45;
+    } else if (TSP <= 36.60) {
+      NTSP = 50;
+    } else if (TSP <= 46.60) {
+      NTSP = 55;
+    } else if (TSP <= 54.50) {
+      NTSP = 60;
+    } else if (TSP <= 59.00) {
+      NTSP = 63;
+    } else if (TSP <= 68.00) {
+      NTSP = 65;
+    } else if (TSP <= 77.36) {
+      NTSP = 70;
+    } else if (TSP <= 82.36) {
+      NTSP = 75;
+    } else {
+      NTSP = 80;
+    }
+
+    //IMSP Masculino adulto
+    if (promIMSP <= 1.14) {
+      IMSP = 30;
+    } else if (promIMSP <= 1.29) {
+      IMSP = 35;
+    } else if (promIMSP <= 1.46) {
+      IMSP = 40;
+    } else if (promIMSP <= 1.66) {
+      IMSP = 45;
+    } else if (promIMSP <= 1.88) {
+      IMSP = 50;
+    } else if (promIMSP <= 2.13) {
+      IMSP = 55;
+    } else if (promIMSP <= 2.33) {
+      IMSP = 60;
+    } else if (promIMSP <= 2.47) {
+      IMSP = 63;
+    } else if (promIMSP <= 2.72) {
+      IMSP = 65;
+    } else if (promIMSP <= 3.11) {
+      IMSP = 70;
+    } else if (promIMSP <= 3.48) {
+      IMSP = 75;
+    } else {
+      IMSP = 80;
+    }
   }
 
   //se renderizan en el html los valores T Normalizados calculados
